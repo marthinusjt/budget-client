@@ -1,24 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect } from 'react';
+import Sitebar from './Components/Home/Sitebar'
+import Auth from './Components/Auth/Auth'
+import Budget from './Components/Budget/Budget'
 import './App.css';
 
-function App() {
+const App = () => {
+  const [token, setToken] = useState(undefined)
+
+  useEffect(() => {
+    if (localStorage.getItem('token')){
+      setToken(localStorage.getItem('token'))
+    }
+  }, [])
+
+  const updateToken = (newToken) => {
+    localStorage.setItem('token', newToken)
+    setToken(newToken)
+    console.log(newToken)
+  }
+
+  const clearToken = () => {
+    localStorage.clear();
+    setToken('');
+  }
+
+  const protectedViews = () => {
+    return (token === localStorage.getItem('token') ? 
+    <Budget /> :
+    <Auth updateToken={updateToken} />
+    )
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Sitebar clickLogout={clearToken}/>
+      {protectedViews()}
     </div>
   );
 }
