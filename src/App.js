@@ -1,10 +1,10 @@
 import React, {useState, useEffect } from 'react';
-import Sitebar from './Components/Home/Sitebar'
-import Auth from './Components/Auth/Auth'
-import Budget from './Components/Budget/Budget'
-import './App.css';
+import Sitebar from './Components/Home/Sitebar';
+import Auth from './Components/Auth/Auth';
+import Budget from './Components/Budget/Budget';
 
 const App = () => {
+
   const [token, setToken] = useState(undefined)
 
   useEffect(() => {
@@ -26,7 +26,8 @@ const App = () => {
 
   const protectedViews = () => {
     return (token === localStorage.getItem('token') ? 
-    <Budget /> :
+    <Budget token={token}/> 
+    :
     <Auth updateToken={updateToken} />
     )
   }
