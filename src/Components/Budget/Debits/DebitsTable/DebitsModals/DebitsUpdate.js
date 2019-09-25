@@ -37,7 +37,7 @@ const DebitUpdate = (props) => {
         .then((res) => {
             props.fetchDebits();
             props.updateOff();
-            props.refreshPage();
+            // props.refreshPage();
         })
     }
 
@@ -65,7 +65,7 @@ const DebitUpdate = (props) => {
         .then((res) => {
             props.fetchDebits();
             props.updateOff();
-            props.refreshPage();
+            // props.refreshPage();
         })
 
     }

@@ -3,71 +3,75 @@ import React, { useState, useEffect } from 'react';
 const Income = (props) => {
     console.log(props)
 
-    const [credits, setCredits] = useState([]);
-    const [debits, setDebits] = useState([]);
+    // console.log(props.debitsAmount - props.creditsAmount)
 
-    const fetchCredits = () => {
+    // const [credits, setCredits] = useState([]);
+    // const [debits, setDebits] = useState([]);
 
-        let url = `http://localhost:3020/credits/all`
+    // const fetchCredits = () => {
 
-        fetch(url, {
-            method: 'GET',
-            headers: new Headers ({
-                'Content-Type' : 'application:json',
-                'Authorization': props.token
-            })
-        })
-        .then(res => res.json())
-        .then(creditsData => {
-            // console.log(creditsData)
-            setCredits(creditsData)
-        })
-        .catch(err => console.error({ message: err }))
-    }
+    //     let url = `http://localhost:3020/credits/all`
 
-    useEffect(() => {
-        fetchCredits()
-    }, [])
+    //     fetch(url, {
+    //         method: 'GET',
+    //         headers: new Headers ({
+    //             'Content-Type' : 'application:json',
+    //             'Authorization': props.token
+    //         })
+    //     })
+    //     .then(res => res.json())
+    //     .then(creditsData => {
+    //         // console.log(creditsData)
+    //         setCredits(creditsData)
+    //     })
+    //     .catch(err => console.error({ message: err }))
+    // }
 
-    const fetchDebits = () => {
+    // useEffect(() => {
+    //     fetchCredits()
+    // }, [])
 
-        let url = `http://localhost:3020/debits/all`
+    // const fetchDebits = () => {
 
-        fetch(url, {
-            method: 'GET',
-            headers: new Headers ({
-                'Content-Type' : 'application:json',
-                'Authorization': props.token
-            })
-        })
-        .then(res => res.json())
-        .then(debitsData => {
-            // console.log(debitsData)
-            setDebits(debitsData)
-        })
-        .catch(err => console.error({ message: err }))
-    }
+    //     let url = `http://localhost:3020/debits/all`
 
-    useEffect(() => {
-        fetchDebits()
-    }, [])
+    //     fetch(url, {
+    //         method: 'GET',
+    //         headers: new Headers ({
+    //             'Content-Type' : 'application:json',
+    //             'Authorization': props.token
+    //         })
+    //     })
+    //     .then(res => res.json())
+    //     .then(debitsData => {
+    //         // console.log(debitsData)
+    //         setDebits(debitsData)
+    //     })
+    //     .catch(err => console.error({ message: err }))
+    // }
 
-    console.log(debits)
-    console.log(credits)
+    // useEffect(() => {
+    //     fetchDebits()
+    // }, [])
+
+    // // console.log(debits)
+    // // console.log(credits)
     
-    let totalCredits = credits.reduce((a, cV) => {
-            return a + parseFloat(cV.expenseAmount)
-        }, 0)
+    // let totalCredits = credits.reduce((a, cV) => {
+    //         return a + parseFloat(cV.expenseAmount)
+    //     }, 0)
 
-    let totalDebits = debits.reduce((a, cV) => {
-            return a + parseFloat(cV.incomeAmount)
-        }, 0)
+    // let totalDebits = debits.reduce((a, cV) => {
+    //         return a + parseFloat(cV.incomeAmount)
+    //     }, 0)
     
-    console.log(totalCredits)
-    console.log(totalDebits)
+    // // console.log(totalCredits)
+    // // console.log(totalDebits)
 
-    let netIncome = totalDebits - totalCredits
-
+    // let netIncome = totalDebits - totalCredits
+    
+    let netIncome = props.debitsAmount - props.creditsAmount
+    
     console.log(netIncome)
 
     return(

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import bgImage from '../../Assets/Budget.jpg';
 import {
     Form,
     FormFeedback,
@@ -37,7 +38,7 @@ const Login = (props) => {
     }
 
     return(
-        <div>
+        <div >
             <h1>Login</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>

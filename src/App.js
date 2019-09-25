@@ -32,9 +32,14 @@ const App = () => {
     )
   }
 
+  // window.onbeforeunload = () => {
+  //   localStorage.clear();
+  //   return '';
+  // };
+
   return (
     <div>
-      <Sitebar clickLogout={clearToken}/>
+      <Sitebar clickLogout={clearToken} />
       {protectedViews()}
     </div>
   );

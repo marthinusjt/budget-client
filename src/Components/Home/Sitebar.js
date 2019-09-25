@@ -23,7 +23,7 @@ const Sitebar = (props) => {
     
     return (
       <div>
-        <Navbar color="info" dark expand='md'>
+        <Navbar color="info" dark expand >
           <NavbarBrand>Welcome to your Budget.</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>

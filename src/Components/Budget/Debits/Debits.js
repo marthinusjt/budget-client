@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DebitsCreate from './DebitsTable/DebitsModals/DebitsCreate'
 import DebitsTable from './DebitsTable/DebitsTable'
 import DebitsUpdate from './DebitsTable/DebitsModals/DebitsUpdate'
+import DebitsAmounts from './DebitsAmounts'
 import Modali, { useModali } from 'modali'
 import {
     Col
@@ -67,16 +68,20 @@ const Debits = (props) => {
     return(
         <>
             <Col>
+            <DebitsCreate fetchDebits={fetchDebits} token={props.token} createOn={createOn} createOff={createOff} refreshPage={refreshPage} />
+            </Col>
+            {/* <Col>
             {
                 createActive ? <DebitsCreate fetchDebits={fetchDebits} token={props.token} createOn={createOn} createOff={createOff} refreshPage={refreshPage} /> : <></>
             }
-            </Col>
+            </Col> */}
             <hr />
             <DebitsTable debits={debits} editUpdateDebit={editUpdateDebit} updateOn={updateOn} toggleUpdateModal={toggleUpdateModal} />
             <hr />
             {
                 updateActive ? <DebitsUpdate debits={debits} debitToUpdate={debitToUpdate} updateOff={updateOff} fetchDebits={fetchDebits} updateModal={updateModal} token={props.token} refreshPage={refreshPage} /> : <></>
             }
+            {<DebitsAmounts debits={debits} setDebitsAmount={props.setDebitsAmount} />}
         </>
     )
 }

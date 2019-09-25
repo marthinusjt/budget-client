@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CreditsCreate from './CreditsTable/CreditsModals/CreditsCreate';
 import CreditsTable from './CreditsTable/CreditsTable';
 import CreditsUpdate from './CreditsTable/CreditsModals/CreditsUpdate';
-// import CreditsAmounts from './CreditsAmounts'
+import CreditsAmounts from './CreditsAmounts'
 import Modali, { useModali } from 'modali'
 import {
     Col,
@@ -69,6 +69,9 @@ const Credits = (props) => {
     
     return(
         <>
+            {/* <Col>
+                <CreditsCreate fetchCredits={fetchCredits} token={props.token} createOn={createOn} createOff={createOff} refreshPage={refreshPage} /> 
+            </Col> */}
             <Col>
             {
                 createActive ? <CreditsCreate fetchCredits={fetchCredits} token={props.token} createOn={createOn} createOff={createOff} refreshPage={refreshPage} /> : <></>
@@ -80,8 +83,7 @@ const Credits = (props) => {
             {
                 updateActive ? <CreditsUpdate credits={credits} creditToUpdate={creditToUpdate} updateOff={updateOff} fetchCredits={fetchCredits} updateModal={updateModal} token={props.token} refreshPage={refreshPage} /> : <></>
             }
-            {/* <hr /> */}
-            {/* <CreditsAmounts credits={credits} setCreditsAmount={props.setCreditsAmount} /> */}
+            {<CreditsAmounts credits={credits} setCreditsAmount={props.setCreditsAmount} />}
         </>
     )
 }

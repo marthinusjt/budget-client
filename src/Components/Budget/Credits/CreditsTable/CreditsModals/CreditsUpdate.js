@@ -37,7 +37,7 @@ const CreditsUpdate = (props) => {
         .then((res) => {
             props.fetchCredits();
             props.updateOff();
-            props.refreshPage();
+            // props.refreshPage();
         })
     }
 
