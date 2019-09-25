@@ -11,8 +11,8 @@ import {
     ModalBody,
 } from 'reactstrap'
 
-// const baseURL = `http://localhost:3020/credits`
-const baseURL = `https://mjtbudgetserver.herokuapp.com/credits`
+const baseURL = `http://localhost:3020/credits`
+// const baseURL = `https://mjtbudgetserver.herokuapp.com/credits`
 
 const CreditsUpdate = (props) => {
     console.log(props)
@@ -36,6 +36,7 @@ const CreditsUpdate = (props) => {
             })
         })
         .then((res) => {
+            props.toggleUpdateModal();
             props.fetchCredits();
             props.updateOff();
             // props.refreshPage();
@@ -63,10 +64,15 @@ const CreditsUpdate = (props) => {
             })
         })
         .then((res) => {
+            props.toggleUpdateModal();
             props.fetchCredits();
             props.updateOff();
-            props.refreshPage();
+            // props.refreshPage();
         })
+        // .then((data) => {
+        //     console.log(data)
+        //     props.toggleUpdateModal();
+        // })
 
     }
 

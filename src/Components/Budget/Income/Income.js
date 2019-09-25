@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+// import React, { useState, useEffect } from 'react';
 
 const Income = (props) => {
-    console.log(props)
+    // console.log(props)
 
     // console.log(props.debitsAmount - props.creditsAmount)
 
@@ -72,15 +73,15 @@ const Income = (props) => {
     
     let netIncome = props.debitsAmount - props.creditsAmount
     
-    console.log(netIncome)
+    // console.log(netIncome)
 
     return(
-        <>
-            <h1>Net Income</h1>
+        <div style={{fontFamily: 'Georgia, serif', }}>
+            <h1 style={{fontSize: '3em'}} >Net Income</h1>
             {
-                netIncome >= 0 ? <h2 style={{color: 'green'}}>{netIncome.toFixed(2)}</h2> : <h2 style={{color: 'red'}}>{netIncome.toFixed(2)}</h2>
+                netIncome >= 0 ? <h2 style={{fontSize: '2.5em', color: 'green', }}>{netIncome.toFixed(2)}</h2> : <h2 style={{fontSize: '2.5em', color: 'red', }}>{netIncome.toFixed(2)}</h2>
             }
-        </>
+        </div>
     )
 }
 

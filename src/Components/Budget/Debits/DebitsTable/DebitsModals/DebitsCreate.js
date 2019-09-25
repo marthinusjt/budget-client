@@ -22,8 +22,8 @@ const DebitsCreate = (props) => {
         animated: true,
     });
 
-    // const url = `http://localhost:3020/debits/create`
-    const url = `https://mjtbudgetserver.herokuapp.com/debits/create`
+    const url = `http://localhost:3020/debits/create`
+    // const url = `https://mjtbudgetserver.herokuapp.com/debits/create`
 
     const handleSubmit = () => {
 
@@ -45,7 +45,8 @@ const DebitsCreate = (props) => {
             res.json();
         })
         .then((debitsData) => {
-            console.log(debitsData)
+            // console.log(debitsData)
+            toggleCreateModal();
             setDebitsDate('');
             setDebitsSource('');
             setDebitsAmount('');

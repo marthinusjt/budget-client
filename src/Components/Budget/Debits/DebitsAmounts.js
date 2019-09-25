@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 
 const DebitsAmounts = (props) => {
-    console.log(props)
+    // console.log(props)
 
     // const [debitTotal, setDebitTotal] = useState('')
 

@@ -22,8 +22,8 @@ const CreditsCreate = (props) => {
         animated: true,
     });
 
-    // const url = `http://localhost:3020/credits/create`
-    const url = `https://mjtbudgetserver.herokuapp.com/credits/create`
+    const url = `http://localhost:3020/credits/create`
+    // const url = `https://mjtbudgetserver.herokuapp.com/credits/create`
 
     const handleSubmit = () => {
 
@@ -45,13 +45,14 @@ const CreditsCreate = (props) => {
             res.json();
         })
         .then((creditsData) => {
-            console.log(creditsData)
+            // console.log(creditsData)
+            toggleCreateModal();
             setCreditsDate('');
             setCreditsName('');
             setCreditsAmount('');
             props.fetchCredits();
-            props.createOff();
-            props.createOn();
+            // props.createOff();
+            // props.createOn();
             // props.refreshPage();
         })
     }

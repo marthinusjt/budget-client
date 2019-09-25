@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Income from './Income/Income';
 import Debits from './Debits/Debits';
 import Credits from './Credits/Credits';
-import bgimage from '../../Assets/Budget.jpg'
 import {
     Col,
     Container,
@@ -20,14 +19,13 @@ const Budget = (props) => {
     // console.log(debitsAmount);
 
     return(
-        <div style={{vw: '100%', overflow: 'hidden'}}>
-            <Jumbotron fluid style={{backgroundColor: 'lightblue', }} >
+        <div style={{vw: '100%', overflowX: 'hidden'}}>
+            <Jumbotron fluid style={{backgroundColor: 'lightblue', marginBottom: '0' }} >
                 <Container style={{textAlign: 'center', }}>
                     <Income token={props.token} creditsAmount={creditsAmount} debitsAmount={debitsAmount} />
                 </Container>
             </Jumbotron>
-            <br />
-            <Row style={{textAlign: 'center', }}>
+            <Row style={{textAlign: 'center', fontFamily: 'Arial, Helvetica, sans-serif', backgroundColor: 'whitesmoke',  }}>
                 <Col sm='1' />
                 <Col sm='4'>
                     <h1>Income</h1>

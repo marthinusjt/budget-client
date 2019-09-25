@@ -12,7 +12,7 @@ const Credits = (props) => {
     // console.log(props)
     
     const [credits, setCredits] = useState([]);
-    const [createActive, setCreateActive] = useState(true);
+    // const [createActive, setCreateActive] = useState(true);
     const [updateActive, setUpdateActive] = useState(false);
     const [creditToUpdate, setCreditToUpdate] = useState({});
     const [updateModal, toggleUpdateModal] = useModali();
@@ -21,8 +21,8 @@ const Credits = (props) => {
     
     const fetchCredits = () => {
 
-        // let url = `http://localhost:3020/credits/all`
-        let url = `https://mjtbudgetserver.herokuapp.com/credits/all`
+        let url = `http://localhost:3020/credits/all`
+        // let url = `https://mjtbudgetserver.herokuapp.com/credits/all`
 
         fetch(url, {
             method: 'GET',
@@ -39,17 +39,17 @@ const Credits = (props) => {
         .catch(err => console.error({ message: err }))
     }
 
-    const refreshPage = () => {
-        window.location.reload(false);
-    }
+    // const refreshPage = () => {
+    //     window.location.reload(false);
+    // }
 
-    const createOn = () => {
-        setCreateActive(true)
-    }
+    // const createOn = () => {
+    //     setCreateActive(true)
+    // }
 
-    const createOff = () => {
-        setCreateActive(false)
-    }
+    // const createOff = () => {
+    //     setCreateActive(false)
+    // }
 
     const editUpdateCredit = (credit) => {
         setCreditToUpdate(credit)
@@ -70,19 +70,19 @@ const Credits = (props) => {
     
     return(
         <>
-            {/* <Col>
-                <CreditsCreate fetchCredits={fetchCredits} token={props.token} createOn={createOn} createOff={createOff} refreshPage={refreshPage} /> 
-            </Col> */}
             <Col>
-            {
-                createActive ? <CreditsCreate fetchCredits={fetchCredits} token={props.token} createOn={createOn} createOff={createOff} refreshPage={refreshPage} /> : <></>
-            }
+                <CreditsCreate fetchCredits={fetchCredits} token={props.token} /> 
+            </Col>
+            <Col>
+            {/* {
+                createActive ? <CreditsCreate fetchCredits={fetchCredits} token={props.token} createOn={createOn} createOff={createOff} /> : <></>
+            } */}
             </Col>
             <hr />
             <CreditsTable credits={credits} editUpdateCredit={editUpdateCredit} updateOn={updateOn} toggleUpdateModal={toggleUpdateModal} />
-            <hr />
+            {/* <hr /> */}
             {
-                updateActive ? <CreditsUpdate credits={credits} creditToUpdate={creditToUpdate} updateOff={updateOff} fetchCredits={fetchCredits} updateModal={updateModal} token={props.token} refreshPage={refreshPage} /> : <></>
+                updateActive ? <CreditsUpdate credits={credits} creditToUpdate={creditToUpdate} updateOff={updateOff} fetchCredits={fetchCredits} updateModal={updateModal} token={props.token} toggleUpdateModal={toggleUpdateModal} /> : <></>
             }
             {<CreditsAmounts credits={credits} setCreditsAmount={props.setCreditsAmount} />}
         </>

@@ -7,7 +7,6 @@ import {
 } from 'reactstrap';
 import Signup from './Signup';
 import Login from './Login';
-import bgImage from '../../Assets/Budget.jpg';
 
 const Auth = (props) => {
     
@@ -19,7 +18,7 @@ const Auth = (props) => {
     }
 
     return(
-        <div style={{width: '100vw', fontWeight: 'bold', }}>
+        <div style={{width: '100vw', fontWeight: 'bold', backgroundColor: 'whitesmoke' }}>
             <Container className='auth-container' style={{height: '100vh'}}>
                 <Col md={{offset: 5}} style={{padding: '10em 0em'}} >
                     {

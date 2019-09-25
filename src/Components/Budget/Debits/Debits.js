@@ -12,15 +12,15 @@ const Debits = (props) => {
     // console.log(props)
     
     const [debits, setDebits] = useState([]);
-    const [createActive, setCreateActive] = useState(true);
+    // const [createActive, setCreateActive] = useState(true);
     const [updateActive, setUpdateActive] = useState(false);
     const [debitToUpdate, setDebitToUpdate] = useState({});
     const [updateModal, toggleUpdateModal] = useModali();
     
     const fetchDebits = () => {
 
-        // let url = `http://localhost:3020/debits/all`
-        let url = `https://mjtbudgetserver.herokuapp.com/debits/all`
+        let url = `http://localhost:3020/debits/all`
+        // let url = `https://mjtbudgetserver.herokuapp.com/debits/all`
 
         fetch(url, {
             method: 'GET',
@@ -37,17 +37,17 @@ const Debits = (props) => {
         .catch(err => console.error({ message: err }))
     }
 
-    const refreshPage = () => {
-        window.location.reload(false);
-    }
+    // const refreshPage = () => {
+    //     window.location.reload(false);
+    // }
 
-    const createOn = () => {
-        setCreateActive(true)
-    }
+    // const createOn = () => {
+    //     setCreateActive(true)
+    // }
 
-    const createOff = () => {
-        setCreateActive(false)
-    }
+    // const createOff = () => {
+    //     setCreateActive(false)
+    // }
 
     const editUpdateDebit = (debit) => {
         setDebitToUpdate(debit)
@@ -67,23 +67,23 @@ const Debits = (props) => {
     }, [])
     
     return(
-        <>
+        <div >
             <Col>
-            <DebitsCreate fetchDebits={fetchDebits} token={props.token} createOn={createOn} createOff={createOff} refreshPage={refreshPage} />
+            <DebitsCreate fetchDebits={fetchDebits} token={props.token} />
             </Col>
             {/* <Col>
             {
-                createActive ? <DebitsCreate fetchDebits={fetchDebits} token={props.token} createOn={createOn} createOff={createOff} refreshPage={refreshPage} /> : <></>
+                createActive ? <DebitsCreate fetchDebits={fetchDebits} token={props.token} createOn={createOn} createOff={createOff} /> : <></>
             }
             </Col> */}
             <hr />
             <DebitsTable debits={debits} editUpdateDebit={editUpdateDebit} updateOn={updateOn} toggleUpdateModal={toggleUpdateModal} />
-            <hr />
+            {/* <hr /> */}
             {
-                updateActive ? <DebitsUpdate debits={debits} debitToUpdate={debitToUpdate} updateOff={updateOff} fetchDebits={fetchDebits} updateModal={updateModal} token={props.token} refreshPage={refreshPage} /> : <></>
+                updateActive ? <DebitsUpdate debits={debits} debitToUpdate={debitToUpdate} updateOff={updateOff} fetchDebits={fetchDebits} updateModal={updateModal} token={props.token} toggleUpdateModal={toggleUpdateModal} /> : <></>
             }
             {<DebitsAmounts debits={debits} setDebitsAmount={props.setDebitsAmount} />}
-        </>
+        </div>
     )
 }
 

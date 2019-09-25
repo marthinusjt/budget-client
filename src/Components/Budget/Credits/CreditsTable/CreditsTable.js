@@ -35,7 +35,7 @@ const CreditsTable = (props) => {
                     <tr>
                         <th>Date</th>
                         <th>Name</th>
-                        <th>Amout</th>
+                        <th>Amount</th>
                         <th></th>
                     </tr>
                 </thead>

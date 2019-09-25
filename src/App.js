@@ -16,7 +16,7 @@ const App = () => {
   const updateToken = (newToken) => {
     localStorage.setItem('token', newToken)
     setToken(newToken)
-    console.log(newToken)
+    // console.log(newToken)
   }
 
   const clearToken = () => {
@@ -32,13 +32,13 @@ const App = () => {
     )
   }
 
-  // window.onbeforeunload = () => {
-  //   localStorage.clear();
-  //   return '';
-  // };
+  window.onbeforeunload = () => {
+    localStorage.clear();
+    return '';
+  };
 
   return (
-    <div>
+    <div >
       <Sitebar clickLogout={clearToken} />
       {protectedViews()}
     </div>

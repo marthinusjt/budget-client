@@ -11,8 +11,8 @@ import {
     ModalBody,
 } from 'reactstrap'
 
-// const baseURL = `http://localhost:3020/debits`
-const baseURL = `https://mjtbudgetserver.herokuapp.com/debits`
+const baseURL = `http://localhost:3020/debits`
+// const baseURL = `https://mjtbudgetserver.herokuapp.com/debits`
 
 const DebitUpdate = (props) => {
     console.log(props)
@@ -23,7 +23,7 @@ const DebitUpdate = (props) => {
 
 
     const deleteDebit = (e) => {
-        // e.preventDefault();
+        // e.preventDefault()
 
         let url = `${baseURL}/delete/${props.debitToUpdate.id}`
         console.log(url)
@@ -36,6 +36,7 @@ const DebitUpdate = (props) => {
             })
         })
         .then((res) => {
+            props.toggleUpdateModal();
             props.fetchDebits();
             props.updateOff();
             // props.refreshPage();
@@ -64,6 +65,7 @@ const DebitUpdate = (props) => {
             })
         })
         .then((res) => {
+            props.toggleUpdateModal();
             props.fetchDebits();
             props.updateOff();
             // props.refreshPage();
@@ -72,9 +74,9 @@ const DebitUpdate = (props) => {
     }
 
     return(
-        <>
+        <div >
             <Modali.Modal {...props.updateModal}>
-                <div style={{textAlign: 'center'}}>
+                <div style={{textAlign: 'center', }}>
                     <h3>Update</h3>
                 </div>
                     <ModalBody>
@@ -140,7 +142,7 @@ const DebitUpdate = (props) => {
                     </Form>
                 </ModalBody>
             </Modal> */}
-        </>
+        </div>
     )
 }
 

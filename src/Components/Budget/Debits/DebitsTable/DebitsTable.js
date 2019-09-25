@@ -28,13 +28,13 @@ const DebitsTable = (props) => {
     }
 
     return(
-        <>
+        <div >
             <Table hover>
                 <thead>
                     <tr>
                         <th>Date</th>
                         <th>Source</th>
-                        <th>Amout</th>
+                        <th>Amount</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -61,11 +61,10 @@ const DebitsTable = (props) => {
                     })
                     :
                     null} */}
-
-
+                    
                 </tbody>
             </Table>
-        </>
+        </div>
     )
 }
 

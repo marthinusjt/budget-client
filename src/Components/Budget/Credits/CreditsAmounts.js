@@ -1,25 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 
 const CreditsAmounts = (props) => {
-    console.log(props)
+    // console.log(props)
 
-    const [creditTotal, setCreditTotal] = useState('')
+    // const [creditTotal, setCreditTotal] = useState('')
 
     let totalCredits = props.credits.reduce((a, cV) => {
         return a + parseFloat(cV.expenseAmount)
     }, 0)
 
-    console.log(totalCredits)
+    // console.log(totalCredits)
 
     // let copy = []
 
     // setCreditTotal(totalCredits)
     
-    useEffect(() => {
-        setCreditTotal(totalCredits)
-    }, )
+    // useEffect(() => {
+    //     setCreditTotal(totalCredits)
+    // }, )
     
-    console.log(creditTotal)
+    // console.log(creditTotal)
 
     useEffect(() => {
         props.setCreditsAmount(totalCredits)

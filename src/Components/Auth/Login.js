@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import bgImage from '../../Assets/Budget.jpg';
 import {
     Form,
     FormFeedback,
@@ -16,8 +15,8 @@ const Login = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // let url = `http://localhost:3020/user/login`
-        let url = `https://mjtbudgetserver.herokuapp.com/user/login`
+        let url = `http://localhost:3020/user/login`
+        // let url = `https://mjtbudgetserver.herokuapp.com/user/login`
 
         fetch(url, {
             method: 'POST',
@@ -33,7 +32,7 @@ const Login = (props) => {
         }).then(
             (res) => res.json()
         ).then((data) => {
-            console.log(data)
+            // console.log(data)
             props.updateToken(data.token)
         })
     }
