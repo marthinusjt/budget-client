@@ -15,8 +15,8 @@ const Login = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        let url = `http://localhost:3020/user/login`
-        // let url = `https://mjtbudgetserver.herokuapp.com/user/login`
+        // let url = `http://localhost:3020/user/login`
+        let url = `https://mjtbudgetserver.herokuapp.com/user/login`
 
         fetch(url, {
             method: 'POST',

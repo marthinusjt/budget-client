@@ -11,8 +11,8 @@ import {
     ModalBody,
 } from 'reactstrap'
 
-const baseURL = `http://localhost:3020/credits`
-// const baseURL = `https://mjtbudgetserver.herokuapp.com/credits`
+// const baseURL = `http://localhost:3020/credits`
+const baseURL = `https://mjtbudgetserver.herokuapp.com/credits`
 
 const CreditsUpdate = (props) => {
     console.log(props)

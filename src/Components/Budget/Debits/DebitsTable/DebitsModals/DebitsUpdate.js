@@ -11,8 +11,8 @@ import {
     ModalBody,
 } from 'reactstrap'
 
-const baseURL = `http://localhost:3020/debits`
-// const baseURL = `https://mjtbudgetserver.herokuapp.com/debits`
+// const baseURL = `http://localhost:3020/debits`
+const baseURL = `https://mjtbudgetserver.herokuapp.com/debits`
 
 const DebitUpdate = (props) => {
     console.log(props)

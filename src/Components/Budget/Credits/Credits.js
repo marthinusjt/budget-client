@@ -21,8 +21,8 @@ const Credits = (props) => {
     
     const fetchCredits = () => {
 
-        let url = `http://localhost:3020/credits/all`
-        // let url = `https://mjtbudgetserver.herokuapp.com/credits/all`
+        // let url = `http://localhost:3020/credits/all`
+        let url = `https://mjtbudgetserver.herokuapp.com/credits/all`
 
         fetch(url, {
             method: 'GET',
