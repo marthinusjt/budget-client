@@ -17,7 +17,8 @@ const Signup = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(firstName, lastName, email, password)
-        let url = `http://localhost:3020/user/signup`
+        // let url = `http://localhost:3020/user/signup`
+        let url = `https://mjtbudgetserver.herokuapp.com/user/signup`
 
         fetch(url, {
             method: 'POST',

@@ -19,7 +19,8 @@ const Debits = (props) => {
     
     const fetchDebits = () => {
 
-        let url = `http://localhost:3020/debits/all`
+        // let url = `http://localhost:3020/debits/all`
+        let url = `https://mjtbudgetserver.herokuapp.com/debits/all`
 
         fetch(url, {
             method: 'GET',
