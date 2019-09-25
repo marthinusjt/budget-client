@@ -70,7 +70,7 @@ const Income = (props) => {
     // // console.log(totalDebits)
 
     // let netIncome = totalDebits - totalCredits
-    
+
     let netIncome = props.debitsAmount - props.creditsAmount
     
     // console.log(netIncome)
@@ -79,7 +79,7 @@ const Income = (props) => {
         <div style={{fontFamily: 'Georgia, serif', }}>
             <h1 style={{fontSize: '3em'}} >Net Income</h1>
             {
-                netIncome >= 0 ? <h2 style={{fontSize: '2.5em', color: 'green', }}>{netIncome.toFixed(2)}</h2> : <h2 style={{fontSize: '2.5em', color: 'red', }}>{netIncome.toFixed(2)}</h2>
+                netIncome >= 0 ? <h2 style={{fontSize: '2.5em', color: 'green', }}>{netIncome.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 })}</h2> : <h2 style={{fontSize: '2.5em', color: 'red', }}>{netIncome.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 })}</h2>
             }
         </div>
     )

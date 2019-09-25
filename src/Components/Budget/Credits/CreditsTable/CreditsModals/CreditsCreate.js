@@ -93,8 +93,8 @@ const CreditsCreate = (props) => {
                                     <Input placeholder='Amount' min={0} type='decimal' name='CreditsAmount' value={creditsAmount} onChange={(e) => setCreditsAmount(e.target.value)} />
                                 </InputGroup>
                             </FormGroup>
-                            <Modali.Button label='Save' isStyleDefault onClick={() => handleSubmit()}></Modali.Button>
-                            <Modali.Button label='Cancel' isStyleCancel onClick={() => toggleCreateModal()}></Modali.Button>
+                            <Modali.Button label='Save' isStyleDefault onClick={() => handleSubmit()} />
+                            <Modali.Button label='Cancel' isStyleCancel onClick={() => toggleCreateModal()} />
                         </Form>
                     </ModalBody>
                 </Modali.Modal>

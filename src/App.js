@@ -32,10 +32,10 @@ const App = () => {
     )
   }
 
-  window.onbeforeunload = () => {
-    localStorage.clear();
-    return '';
-  };
+  // window.onbeforeunload = () => {
+  //   localStorage.clear();
+  //   return '';
+  // };
 
   return (
     <div >

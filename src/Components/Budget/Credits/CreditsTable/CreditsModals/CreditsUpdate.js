@@ -26,7 +26,7 @@ const CreditsUpdate = (props) => {
         // e.preventDefault();
 
         let url = `${baseURL}/delete/${props.creditToUpdate.id}`
-        console.log(url)
+        // console.log(url)
 
         fetch(url, {
             method: 'DELETE',
@@ -47,7 +47,7 @@ const CreditsUpdate = (props) => {
         // e.preventDefault();
 
         let url = `${baseURL}/update/${props.creditToUpdate.id}`
-        console.log(url);
+        // console.log(url);
 
         fetch(url, {
             method: 'PUT',

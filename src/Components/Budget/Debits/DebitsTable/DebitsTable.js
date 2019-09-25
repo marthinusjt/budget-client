@@ -18,7 +18,7 @@ const DebitsTable = (props) => {
                 <tr key={index}>
                     <td>{debit.incomeDate}</td>
                     <td>{debit.incomeSource}</td>
-                    <td>{parseFloat(debit.incomeAmount).toFixed(2)}</td>
+                    <td>{parseFloat(debit.incomeAmount).toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 })}</td>
                     <td>
                         <Button color='warning' onClick={() => {props.editUpdateDebit(debit); props.updateOn(); props.toggleUpdateModal() }}>Update</Button>
                     </td>

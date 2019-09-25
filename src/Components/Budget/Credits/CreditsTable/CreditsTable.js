@@ -19,7 +19,7 @@ const CreditsTable = (props) => {
                 <tr key={index}>
                     <td>{credit.expenseDate}</td>
                     <td>{credit.expenseName}</td>
-                    <td>{parseFloat(credit.expenseAmount).toFixed(2)}</td>
+                    <td>{parseFloat(credit.expenseAmount).toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 })}</td>
                     <td>
                         <Button color='warning' onClick={() => {props.editUpdateCredit(credit); props.updateOn(); props.toggleUpdateModal() }}>Update</Button>
                     </td>
